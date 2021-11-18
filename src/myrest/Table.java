@@ -6,16 +6,15 @@ package myrest;
  */
 public class Table extends Thread {
 
-    private int type;
     private int quantity;
-    private int capacity;
+    private final int capacity;
     private int ejeX;
     private int ejeY;
     private int size1;
     private int size2;
 
-    public Table(int type, int quantity, int capacity, int ejeX, int ejeY, int size1, int size2) {
-        this.type = type;
+    public Table(int quantity, int capacity, int ejeX, int ejeY, int size1, 
+            int size2) {        
         this.quantity = quantity;
         this.capacity = capacity;
         this.ejeX = ejeX;
@@ -80,7 +79,7 @@ public class Table extends Thread {
             wait();
         }
         //this sleep is for the meal to at least appear when client is waiting
-        sleep(50);
+        sleep(400);
         --this.quantity;
         notify();
         System.out.println("Client " + client.getType() + ": " + this.quantity);

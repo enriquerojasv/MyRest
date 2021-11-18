@@ -11,20 +11,24 @@ public class Chef extends Thread {
 
     private int type;
     private int pace;
-    private Table table;
+    private final Table table;
     private int ejeX;
     private int ejeY;
-    private int size1;
-    private int size2;
+    private int sizeX;
+    private int sizeY;
+    private final int COOKING_TIME = 750;
+    private final int CENTER_TABLE_X = 415;
+    private final int CHEF_TABLE_X = 80;
 
-    public Chef(int type, int pace, Table table, int ejeX, int ejeY, int size1, int size2) {
+    public Chef(int type, int pace, Table table, int ejeX, int ejeY, int sizeX,
+            int sizeY) {
         this.type = type;
         this.pace = pace;
         this.table = table;
         this.ejeX = ejeX;
         this.ejeY = ejeY;
-        this.size1 = size1;
-        this.size2 = size2;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
 
     public int getEjeX() {
@@ -43,20 +47,28 @@ public class Chef extends Thread {
         this.ejeY = ejeY;
     }
 
-    public int getSize1() {
-        return size1;
+    public int getPace() {
+        return pace;
     }
 
-    public void setSize1(int size1) {
-        this.size1 = size1;
+    public void setPace(int pace) {
+        this.pace = pace;
     }
 
-    public int getSize2() {
-        return size2;
+    public int getSizeX() {
+        return sizeX;
     }
 
-    public void setSize2(int size2) {
-        this.size2 = size2;
+    public void setSizeX(int sizeX) {
+        this.sizeX = sizeX;
+    }
+
+    public int getSizeY() {
+        return sizeY;
+    }
+
+    public void setSizeY(int sizeY) {
+        this.sizeY = sizeY;
     }
 
     public int getType() {
@@ -67,16 +79,8 @@ public class Chef extends Thread {
         this.type = type;
     }
 
-    public int getPace() {
-        return pace;
-    }
-
-    public void setPace(int pace) {
-        this.pace = pace;
-    }
-
     public void cook() throws InterruptedException {
-        sleep(this.pace);
+        sleep(this.COOKING_TIME);
         System.out.println("Chef is cooking");
     }
 
@@ -86,12 +90,12 @@ public class Chef extends Thread {
         while (true) {
             try {
                 this.cook();
-                while (this.ejeX < 420) {
+                while (this.ejeX < CENTER_TABLE_X) {
                     this.ejeX++;
                     sleep(this.pace);
                 }
                 table.placeMeal(this);
-                while (ejeX > 60) {
+                while (ejeX > CHEF_TABLE_X) {
                     this.ejeX--;
                     sleep(this.pace);
                 }
