@@ -70,13 +70,11 @@ public class Viewer extends Canvas implements Runnable {
 
             g.fillOval(this.arrayChef[i].getEjeX(), this.arrayChef[i].getEjeY(),
                     this.arrayChef[i].getSizeX(), this.arrayChef[i].getSizeX());
-            //painting kitchen cooking
+            //painting chef cooking
             if (this.arrayChef[i].getEjeX() == 80) {
                 g.setColor(Color.red);
                 g.fillOval(arrayChef[i].getEjeX() - 45, arrayChef[i].getEjeY()
                         + 15, mealSize, mealSize);
-                System.out.println(arrayClient[i].getEjeY());
-                System.out.println(i);
             }
         }
 
@@ -89,9 +87,7 @@ public class Viewer extends Canvas implements Runnable {
             if (this.arrayClient[i].getEjeX() == this.arrayClient[i].getCLIENT_TABLE_X()) {
                 g.setColor(Color.white);
                 g.fillOval(arrayClient[i].getEjeX() + 70, arrayClient[i].getEjeY()
-                        + 15, mealSize, mealSize);
-                System.out.println(arrayClient[i].getEjeY());
-                System.out.println(i);
+                        + 15, mealSize, mealSize);                
             }
         }
 

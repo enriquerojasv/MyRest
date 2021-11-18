@@ -29,7 +29,7 @@ public class MyRest {
         //type, pace, table, x position, y position, x size, y size          
         Chef chef1 = new Chef(1, 5, table1, 90, HEIGHT / 5, 60, 60);
         Chef chef2 = new Chef(2, 8, table1, 90, HEIGHT / 5 + 120, 60, 60);
-        Chef chef3 = new Chef(3, 12, table1, 90, HEIGHT / 5 + 240, 60, 60);
+        Chef chef3 = new Chef(3, 15, table1, 90, HEIGHT / 5 + 240, 60, 60);
         chef1.start();
         chef2.start();
         chef3.start();
@@ -39,7 +39,7 @@ public class MyRest {
         Client client1 = new Client(1, 10, table1, 600, HEIGHT / 6 + 5, 60, 60);
         Client client2 = new Client(2, 15, table1, 600, HEIGHT / 6 + 80, 60, 60);
         Client client3 = new Client(3, 15, table1, 600, HEIGHT / 6 + 160, 60, 60);
-        Client client4 = new Client(4, 30, table1, 600, HEIGHT / 6 + 240, 60, 60);
+        Client client4 = new Client(4, 10, table1, 600, HEIGHT / 6 + 240, 60, 60);
         Client client5 = new Client(5, 20, table1, 600, HEIGHT / 6 + 320, 60, 60);
         client1.start();
         client2.start();

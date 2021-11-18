@@ -69,8 +69,7 @@ public class Table extends Thread {
             wait();
         }
         ++this.quantity;
-        notify();
-        System.out.println("Chef " + chef.getType() + ": " + this.quantity);
+        notify();        
     }
 
     //main method for client to take the meal of the table
@@ -81,13 +80,6 @@ public class Table extends Thread {
         //this sleep is for the meal to at least appear when client is waiting
         sleep(400);
         --this.quantity;
-        notify();
-        System.out.println("Client " + client.getType() + ": " + this.quantity);
-    }
-
-    @Override
-    public void run() {
-
-    }
-
+        notify();        
+    } 
 }

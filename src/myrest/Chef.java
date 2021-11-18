@@ -80,8 +80,7 @@ public class Chef extends Thread {
     }
 
     public void cook() throws InterruptedException {
-        sleep(this.COOKING_TIME);
-        System.out.println("Chef is cooking");
+        sleep(this.COOKING_TIME);        
     }
 
     @Override

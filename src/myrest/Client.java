@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 public class Client extends Thread {
 
     private int type;
-    private int pace;    
+    private int pace;
     private final Table table;
     private int ejeX;
     private int ejeY;
@@ -90,7 +90,6 @@ public class Client extends Thread {
 
     public void eat() throws InterruptedException {
         sleep(this.EATING_TIME);
-        System.out.println("Client is eating");
     }
 
     @Override
